@@ -1,40 +1,36 @@
-# Item Catalog Project
-An Udacity Full Stack Web Developer II Nanodegree project developed by Subhadeep Dey.
+# BSI C5 Catalog Project
+An Udacity Full Stack Web Developer II Nanodegree project developed by Björn Ziller (First version from august in 2019.
 
 ## About
-This application provides a list of items within a variety of categories as well as provide a user registration and authentication system. Registered users will have the ability to post, edit, and delete their own items.
+This application provides a cathalog for the common BSI C5 Cloud Requirements with an initial setup of attributes (description, annotations, ext_id) and it provides a user registration and authentication system on the oauth2 base. Third person provider is google, so you will need an google+ account.
 
 ### Features
-- Proper authentication and authorisation check.
+- Google based authentication and authorisation check.
 - Full CRUD support using SQLAlchemy and Flask.
 - JSON endpoints.
-- Implements oAuth using Google Sign-in API.
 
 ### Project Structure
 ```
 .
-├── app.py
+├── BSI_C5_project.py
 ├── client_secrets.json
 ├── database_setup.py
-├── fake_db_populator.py
-├── itemcatalog.db
-├── LICENSE
+├── requirements_base.py
 ├── README.md
 ├── static
 │   └── style.css
 └── templates
-    ├── delete_category.html
-    ├── delete.html
-    ├── edit_category.html
-    ├── index.html
-    ├── items.html
-    ├── layout.html
-    ├── login.html
-    ├── new-category.html
-    ├── new-item-2.html
-    ├── new-item.html
-    ├── update-item.html
-    └── view-item.html
+    ├── newReField.html
+    ├── deleteReField.html
+    ├── editReField.html
+    ├── main.html
+    ├── header.html
+    ├── login_g.html
+    ├── newRequirement.html
+    ├── editRequirement.html
+    ├── deleteRequirement.html
+    ├── reFields.html
+    └── refieldCollection.html
 ```
 
 ## Steps to run this project
@@ -43,7 +39,7 @@ This application provides a list of items within a variety of categories as well
 
 2. Download and install [VirtualBox](https://www.virtualbox.org/wiki/Downloads).
 
-3. Clone or download the Vagrant VM configuration file from [here](https://github.com/udacity/fullstack-nanodegree-vm).
+3. Clone or download the Vagrant VM configuration file to your directory
 
 4. Open the above directory and navigate to the `vagrant/` sub-directory.
 
@@ -75,22 +71,22 @@ This application provides a list of items within a variety of categories as well
     ```
 13. Insert dummy values. **If you don't run this, the application might not run.**
     ```bash
-    python3 fake_db_populator.py
+    python3 requirements_base.py
     ```
 14. Run this application:
     ```bash
-    python3 app.py
+    python3 BSI_C5_Project.py
     ```
 15. Open `http://localhost:5000/` in your favourite Web browser, and enjoy.
 
 ## Debugging
 In case the app doesn't run, make sure to confirm the following points:
-- You have run `python3 fake_db_populator.py` before running the application. This is an essential step.
+- You have run `python3 requirements_base.py` before running the application. This is an essential step.
 - The latest version of Flask is installed.
-- Python 3.6 is installed. In the vagrant machine, you may find Python 3.5 installed by default. To install Python 3.6, follow [this answer](https://askubuntu.com/a/865569/571299). To invoke Python 3.6, type `python3.6` instead of `python3`.
+- Python 3.6 is installed. In the vagrant machine, you may find Python 3.5 installed by default.
 
 ## Known Issue
-This app might show an empty username if you sign in with a custom-domain-based Google account (Corporate accounts). For instance, if you use a Google account `johndoe@company.com`, this app might show an empty username.
+In some case, you need to hit enter twice after signing in via google+ to get a redirect to the page.
 
 ## Help and Support
 In case you run into any trouble, create an issue on GitHub. I will make sure to look into it as soon as possible.
